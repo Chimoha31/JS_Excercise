@@ -45,4 +45,17 @@ const closestNum = (num1, num2) => {
 console.log(closestNum(90, 80));
 
 // ------------------------------------------------------------
-// ④Given two value, write a JS program to find out which one is nearest to 100
+// ④Write a JS program to check a given string contains 2 to 4 occurrences of a specified character.
+
+const sameChar = (str, char) => 
+ str.split('').filter(ch => ch === char).length;
+
+const twoToFour = (str, char) => 
+  sameChar(str, char) >= 2 && sameChar(str, char) <= 4;
+
+
+console.log(twoToFour("o!", "o"));
+console.log(twoToFour("oo!", "o"));
+console.log(twoToFour("ooo!", "o"));
+console.log(twoToFour("oooo!", "o"));
+console.log(twoToFour("ooooo!", "o"));
