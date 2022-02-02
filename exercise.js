@@ -27,16 +27,22 @@ concatenate("Japanese", "Canadian");
 // ------------------------------------------------------------
 // ③Given two value, write a JS program to find out which one is nearest to 100
 const closestNum = (num1, num2) => {
-  const numA = 100 - num1;
-  const numB = 100 - num2;
+  // const numA = 100 - num1;
+  // const numB = 100 - num2;
+  
+  // if (numA < numB) {
+  //   return `${num1} is closest to 100 than ${num2}`;
+  // } else if (numA > numB) {
+  //   return `${num2} is closest to 100 than ${num1}`;
+  // }else{
+  //   return `${num1} & ${num2} is same number. Can't compare`
+  // }
+  // ↓short way
 
-  if (numA < numB) {
-    return `${num1} is closest to 100 than ${num2}`;
-  } else if (numA > numB) {
-    return `${num2} is closest to 100 than ${num1}`;
-  }else{
-    return `${num1} & ${num2} is same number. Can't compare`
-  }
+  return (100 - num1) < (100 - num2) ? num1 : num2;
 };
 
-console.log(closestNum(79, 80));
+console.log(closestNum(90, 80));
+
+// ------------------------------------------------------------
+// ④Given two value, write a JS program to find out which one is nearest to 100
