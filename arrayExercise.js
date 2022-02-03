@@ -70,5 +70,7 @@ const sortBig = ageArr.sort((a, b) => a > b ? -1 : 1);
 console.log("Big", sortBig);
 
 // 5) How many people are there in each department?
-const departmentNum = people.reduce((previous, current) => ({...previous, [current.department]: previous[current.department] + 1 || 1}), {});
+const departmentNum = people.reduce((total, current) => (
+  {...total, [current.department]: total[current.department] + 1 || 1}
+  ), {});
 console.log(departmentNum);
