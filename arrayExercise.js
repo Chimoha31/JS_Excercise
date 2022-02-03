@@ -26,10 +26,33 @@ console.log(totalSalary);
 
 
 // 2) Who are the people that are currently older than 30?
+const today = new Date();
+const year = today.getFullYear();
+console.log(year);
 
+for(let j = 0; j < people.length; j++) {
+  const eachBD = people[j].DOB.split('/');
+  // console.log(eachBD);
+  const eachBDYear = eachBD[2];
+  // console.log(eachBDYear);
+  const age = year - eachBDYear;
+  console.log(age);
 
+  if(year - eachBDYear >= 30) {
+    console.log(`${people[j].firstName} ${people[j].lastName} is ${age}, which is older than 30`);
+  }
+}
 
 // 3) Get a list of the people's full name (firstName and lastName).
+const nameArry = [];
+
+for(let n = 0; n < people.length; n++) {
+  const firstName = people[n].firstName;
+  const lastName = people[n].lastName;
+  const fullName = `${firstName} ${lastName}`
+  nameArry.push(fullName)
+}
+console.log(nameArry);
 
 
 // 4) Get a list of people in the array ordered from youngest to oldest.
