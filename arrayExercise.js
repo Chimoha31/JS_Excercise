@@ -56,6 +56,19 @@ console.log(nameArry);
 
 
 // 4) Get a list of people in the array ordered from youngest to oldest.
+const ageArr = [];
 
+for(let a = 0; a < people.length; a++) {
+  const birthYear = people[a].DOB.split('/')[2];
+  const age = year - birthYear;
+  ageArr.push(age);
+}
+console.log("Age Array", ageArr);
+const sortSmall = ageArr.sort((a, b) => a < b ? -1 : 1);
+console.log("Small", sortSmall);
+const sortBig = ageArr.sort((a, b) => a > b ? -1 : 1);
+console.log("Big", sortBig);
 
 // 5) How many people are there in each department?
+const departmentNum = people.reduce((previous, current) => ({...previous, [current.department]: previous[current.department] + 1 || 1}), {});
+console.log(departmentNum);
