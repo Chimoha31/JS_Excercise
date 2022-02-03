@@ -29,7 +29,7 @@ concatenate("Japanese", "Canadian");
 const closestNum = (num1, num2) => {
   // const numA = 100 - num1;
   // const numB = 100 - num2;
-  
+
   // if (numA < numB) {
   //   return `${num1} is closest to 100 than ${num2}`;
   // } else if (numA > numB) {
@@ -39,7 +39,7 @@ const closestNum = (num1, num2) => {
   // }
   // ↓short way
 
-  return (100 - num1) < (100 - num2) ? num1 : num2;
+  return 100 - num1 < 100 - num2 ? num1 : num2;
 };
 
 console.log(closestNum(90, 80));
@@ -47,15 +47,27 @@ console.log(closestNum(90, 80));
 // ------------------------------------------------------------
 // ④Write a JS program to check a given string contains 2 to 4 occurrences of a specified character.
 
-const sameChar = (str, char) => 
- str.split('').filter(ch => ch === char).length;
+const sameChar = (str, char) =>
+  str.split("").filter((ch) => ch === char).length;
 
-const twoToFour = (str, char) => 
+const twoToFour = (str, char) =>
   sameChar(str, char) >= 2 && sameChar(str, char) <= 4;
-
 
 console.log(twoToFour("o!", "o"));
 console.log(twoToFour("oo!", "o"));
 console.log(twoToFour("ooo!", "o"));
 console.log(twoToFour("oooo!", "o"));
 console.log(twoToFour("ooooo!", "o"));
+
+// ------------------------------------------------------------
+// ⑤Write a JS program to find number of even digits in a an array of integer.
+const evenNumber = [];
+
+const findNumber = (even) => {
+  for (let i = 0; i < even.length; i++) {
+    even[i] % 2 === 0 ? evenNumber.push(even[i]) : false;
+  }
+};
+
+findNumber([10, 3, 51, 42, 6]);
+console.log(evenNumber);
